@@ -20,6 +20,15 @@ public class GridSignalAnalyzer {
         }
     }
 
+    public void analyzeWithHybridLoop(char[][] grid) {
+        for (char[] rowArray : grid) {
+            for (int j = 0; j < rowArray.length; j++) {
+                System.out.print(rowArray[j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
 
         GridSignalAnalyzer analyzer = new GridSignalAnalyzer();
@@ -38,6 +47,10 @@ public class GridSignalAnalyzer {
 
         System.out.println("--- PHASE 3: ADVANCED FOR-EACH SWEEP ---");
         analyzer.analyzeWithForEachLoop(scrambledGrid);
+        System.out.println();
+
+        System.out.println("--- PHASE 4: HYBRID LOOP APPROACH ---");
+        analyzer.analyzeWithHybridLoop(scrambledGrid);
         System.out.println();
 
     }
