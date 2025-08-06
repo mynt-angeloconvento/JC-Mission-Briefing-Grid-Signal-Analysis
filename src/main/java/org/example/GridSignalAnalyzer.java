@@ -11,6 +11,15 @@ public class GridSignalAnalyzer {
         }
     }
 
+    public void analyzeWithForEachLoop(char[][] grid) {
+        for (char[] rowArray : grid) {
+            System.out.println("Processing Row with Hash: " + rowArray);
+            for (char value : rowArray) {
+                System.out.println("-> " + value);
+            }
+        }
+    }
+
     public static void main(String[] args) {
 
         GridSignalAnalyzer analyzer = new GridSignalAnalyzer();
@@ -25,6 +34,10 @@ public class GridSignalAnalyzer {
 
         System.out.println("--- PHASE 2: STANDARD FOR-LOOP MANEUVER ---");
         analyzer.analyzeWithForLoop(scrambledGrid);
+        System.out.println();
+
+        System.out.println("--- PHASE 3: ADVANCED FOR-EACH SWEEP ---");
+        analyzer.analyzeWithForEachLoop(scrambledGrid);
         System.out.println();
 
     }
